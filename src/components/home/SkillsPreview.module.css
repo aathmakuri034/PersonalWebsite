@@ -1,0 +1,32 @@
+/* ── Skills preview strip ── */
+.section {
+  padding: 6rem 1.5rem;
+  background: color-mix(in srgb, var(--color-muted) 30%, transparent);
+}
+
+.container {
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.badge {
+  border-radius: 0.75rem;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-background);
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-foreground);
+  transition: all 0.2s;
+}
+.badge:hover {
+  border-color: var(--color-primary-400);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 0 10px rgba(99, 102, 241, 0.1);
+}

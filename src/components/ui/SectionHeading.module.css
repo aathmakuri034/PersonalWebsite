@@ -1,0 +1,24 @@
+/* ── Section heading block ── */
+.wrapper {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  font-family: var(--font-heading);
+}
+
+@media (min-width: 640px) {
+  .title {
+    font-size: 2.25rem;
+  }
+}
+
+.subtitle {
+  margin-top: 1rem;
+  font-size: 1.125rem;
+  color: var(--color-muted-foreground);
+}

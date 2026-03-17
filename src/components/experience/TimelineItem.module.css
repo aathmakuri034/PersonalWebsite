@@ -1,0 +1,128 @@
+/* ── Timeline item ── */
+.item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding-left: 3rem;
+}
+@media (min-width: 768px) {
+  .item {
+    padding-left: 0;
+  }
+}
+
+.itemLeft {}
+@media (min-width: 768px) {
+  .itemLeft {
+    flex-direction: row;
+  }
+}
+
+.itemRight {}
+@media (min-width: 768px) {
+  .itemRight {
+    flex-direction: row-reverse;
+  }
+}
+
+/* ── Dot on the timeline ── */
+.dot {
+  position: absolute;
+  left: 0.625rem;
+  top: 0.5rem;
+  z-index: 10;
+  height: 0.75rem;
+  width: 0.75rem;
+  border-radius: 9999px;
+  background-color: var(--color-primary-500);
+  box-shadow: 0 0 0 4px var(--color-background);
+}
+@media (min-width: 768px) {
+  .dot {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* ── Spacer (for desktop alternating) ── */
+.spacer {
+  display: none;
+  width: 50%;
+}
+@media (min-width: 768px) {
+  .spacer {
+    display: block;
+  }
+}
+
+/* ── Content card ── */
+.content {
+  width: 100%;
+  border-radius: 1rem;
+  border: 1px solid var(--color-border);
+  background: color-mix(in srgb, var(--color-background) 50%, transparent);
+  padding: 1.5rem;
+  backdrop-filter: blur(4px);
+}
+@media (min-width: 768px) {
+  .content {
+    width: 50%;
+  }
+  .contentLeft {
+    padding-right: 3rem;
+  }
+  .contentRight {
+    padding-left: 3rem;
+  }
+}
+
+.period {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-primary-500);
+}
+
+.periodText {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.role {
+  font-size: 1.125rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+}
+
+.company {
+  margin-bottom: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-accent-500);
+}
+
+.description {
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  line-height: 1.625;
+  color: var(--color-muted-foreground);
+}
+
+.techPills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.techPill {
+  border-radius: 9999px;
+  background-color: var(--color-muted);
+  padding: 0.125rem 0.625rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-muted-foreground);
+}

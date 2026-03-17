@@ -1,0 +1,123 @@
+/* ── Navbar shell ── */
+.nav {
+  position: fixed;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
+  background: color-mix(in srgb, var(--color-background) 80%, transparent);
+  backdrop-filter: blur(16px);
+}
+
+.inner {
+  max-width: 72rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+}
+
+/* ── Logo ── */
+.logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+}
+
+/* ── Desktop nav links ── */
+.desktopNav {
+  display: none;
+  align-items: center;
+  gap: 0.25rem;
+}
+@media (min-width: 768px) {
+  .desktopNav {
+    display: flex;
+  }
+}
+
+.navLink {
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: color 0.2s, background-color 0.2s;
+  color: var(--color-muted-foreground);
+}
+.navLink:hover {
+  background-color: var(--color-muted);
+  color: var(--color-foreground);
+}
+
+.navLinkActive {
+  composes: navLink;
+  background-color: var(--color-primary-100);
+  color: var(--color-primary-700);
+}
+:global(.dark) .navLinkActive {
+  background-color: var(--color-primary-950);
+  color: var(--color-primary-300);
+}
+
+/* ── Mobile controls ── */
+.mobileControls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+@media (min-width: 768px) {
+  .mobileControls {
+    display: none;
+  }
+}
+
+.menuButton {
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  color: color-mix(in srgb, var(--color-foreground) 70%, transparent);
+}
+.menuButton:hover {
+  background-color: var(--color-muted);
+}
+
+/* ── Mobile dropdown ── */
+.mobileMenu {
+  border-top: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
+  background: color-mix(in srgb, var(--color-background) 95%, transparent);
+  backdrop-filter: blur(16px);
+}
+@media (min-width: 768px) {
+  .mobileMenu {
+    display: none;
+  }
+}
+
+.mobileMenuInner {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1.5rem;
+}
+
+.mobileLink {
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: color 0.2s, background-color 0.2s;
+  color: var(--color-muted-foreground);
+}
+.mobileLink:hover {
+  background-color: var(--color-muted);
+  color: var(--color-foreground);
+}
+
+.mobileLinkActive {
+  composes: mobileLink;
+  background-color: var(--color-primary-100);
+  color: var(--color-primary-700);
+}
+:global(.dark) .mobileLinkActive {
+  background-color: var(--color-primary-950);
+  color: var(--color-primary-300);
+}

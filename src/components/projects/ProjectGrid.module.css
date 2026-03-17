@@ -1,0 +1,10 @@
+/* ── Project grid layout ── */
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

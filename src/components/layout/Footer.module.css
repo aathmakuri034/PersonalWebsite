@@ -1,0 +1,40 @@
+/* ── Footer ── */
+.footer {
+  border-top: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
+  background: color-mix(in srgb, var(--color-muted) 30%, transparent);
+}
+
+.inner {
+  max-width: 72rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem 1.5rem;
+}
+@media (min-width: 640px) {
+  .inner {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.copyright {
+  font-size: 0.875rem;
+  color: var(--color-muted-foreground);
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.socialLink {
+  color: var(--color-muted-foreground);
+  transition: color 0.2s;
+}
+.socialLink:hover {
+  color: var(--color-primary-500);
+}

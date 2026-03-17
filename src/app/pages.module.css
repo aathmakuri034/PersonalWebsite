@@ -1,0 +1,149 @@
+/* ── Shared page layouts ── */
+.pageWrapper {
+  padding: 6rem 1.5rem;
+}
+
+.containerWide {
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.containerNarrow {
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+.containerArticle {
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+/* ── Contact page ── */
+.contactGrid {
+  display: grid;
+  gap: 3rem;
+}
+@media (min-width: 768px) {
+  .contactGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.contactSidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.contactSidebarTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+}
+
+.socialLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--color-muted-foreground);
+  transition: color 0.2s;
+}
+.socialLink:hover {
+  color: var(--color-primary-500);
+}
+
+/* ── Experience page ── */
+.resumeButton {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+/* ── Blog listing ── */
+.emptyState {
+  text-align: center;
+  color: var(--color-muted-foreground);
+}
+
+.postList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.postRow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+@media (min-width: 640px) {
+  .postRow {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}
+
+.postTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  transition: all 0.2s;
+}
+
+.postSummary {
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: var(--color-muted-foreground);
+}
+
+.postTags {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  border-radius: 9999px;
+  background-color: var(--color-primary-100);
+  padding: 0.125rem 0.625rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-primary-700);
+}
+:global(.dark) .tag {
+  background-color: var(--color-primary-950);
+  color: var(--color-primary-300);
+}
+
+.postDate {
+  flex-shrink: 0;
+  font-size: 0.875rem;
+  color: var(--color-muted-foreground);
+}
+
+/* ── Blog post detail ── */
+.postMeta {
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.postMetaTags {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.proseWrapper {
+  max-width: none;
+  margin: 0 auto;
+}

@@ -1,0 +1,47 @@
+/* ── Button base ── */
+.base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+/* ── Variants ── */
+.primary {
+  composes: base;
+  background: linear-gradient(to right, var(--color-primary-500), var(--color-accent-500), var(--color-pop-500));
+  color: white;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+.primary:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 0 25px var(--color-primary-500-25, rgba(99, 102, 241, 0.25));
+  transform: scale(1.05);
+}
+
+.outline {
+  composes: base;
+  border: 2px solid var(--color-primary-500);
+  color: var(--color-primary-600);
+}
+.outline:hover {
+  background-color: var(--color-primary-50);
+}
+:global(.dark) .outline {
+  color: var(--color-primary-400);
+}
+:global(.dark) .outline:hover {
+  background-color: rgba(30, 27, 75, 0.5);
+}
+
+.ghost {
+  composes: base;
+  color: var(--color-foreground);
+}
+.ghost:hover {
+  background-color: var(--color-muted);
+}

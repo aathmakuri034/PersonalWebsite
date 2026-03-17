@@ -1,0 +1,16 @@
+/* ── Theme toggle ── */
+.placeholder {
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.button {
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  color: color-mix(in srgb, var(--color-foreground) 70%, transparent);
+  transition: color 0.2s, background-color 0.2s;
+}
+.button:hover {
+  background-color: var(--color-muted);
+  color: var(--color-foreground);
+}

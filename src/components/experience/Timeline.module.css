@@ -1,0 +1,30 @@
+/* ── Timeline layout ── */
+.wrapper {
+  position: relative;
+}
+
+.line {
+  position: absolute;
+  left: 1rem;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    var(--color-primary-500),
+    var(--color-accent-500),
+    var(--color-pop-500)
+  );
+}
+@media (min-width: 768px) {
+  .line {
+    left: 50%;
+    transform: translateX(-1px);
+  }
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}

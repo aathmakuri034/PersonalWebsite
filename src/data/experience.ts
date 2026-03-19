@@ -33,7 +33,7 @@ export const experiences: Experience[] = [
     role: "B.S. Computer Science",
     period: "2021 — 2025",
     description:
-      "Graduated with honors. Coursework in algorithms, data structures, databases, operating systems, and software engineering.",
+      "Graduated with honors. Coursework in algorithms, data structures, databases, operating systems, and artificial intelligence.",
     tech: ["Javascript", "Python", "C++", "SQL", "Git"],
     type: "education",
   },

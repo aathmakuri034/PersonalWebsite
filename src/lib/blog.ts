@@ -1,6 +1,11 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { unified } from "unified";
+import remarkParse from "remark-parse";
+import remarkRehype from "remark-rehype";
+import rehypeSanitize from "rehype-sanitize";
+import rehypeStringify from "rehype-stringify";
 import { BlogPost } from "@/types";
 
 const contentDir = path.join(process.cwd(), "src/content/blog");
@@ -26,6 +31,16 @@ export function getAllPosts(): BlogPost[] {
   });
 
   return posts.sort((a, b) => (a.date > b.date ? -1 : 1));
+}
+
+export async function markdownToHtml(markdown: string): Promise<string> {
+  const result = await unified()
+    .use(remarkParse)
+    .use(remarkRehype)
+    .use(rehypeSanitize)
+    .use(rehypeStringify)
+    .process(markdown);
+  return result.toString();
 }
 
 export function getPostBySlug(slug: string): BlogPost & { content: string } {

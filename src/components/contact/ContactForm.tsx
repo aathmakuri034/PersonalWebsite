@@ -3,7 +3,8 @@
 import { useState, FormEvent } from "react";
 import Button from "@/components/ui/Button";
 import AnimatedContainer from "@/components/ui/AnimatedContainer";
-import { submitContactForm, contactSchema } from "@/app/actions/contact";
+import { submitContactForm } from "@/app/actions/contact";
+import { contactSchema } from "@/lib/schemas";
 import styles from "./ContactForm.module.css";
 
 export default function ContactForm() {

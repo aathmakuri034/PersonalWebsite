@@ -2,21 +2,21 @@ import { Project } from "@/types";
 
 export const projects: Project[] = [
   {
-    title: "AI-Powered Task Manager",
+    title: "AI-Powered Job Creation Agent",
     description:
-      "A full-stack task management app with AI-driven prioritization and smart scheduling. Built with real-time collaboration features and natural language task input.",
-    tech: ["Next.js", "TypeScript", "OpenAI", "PostgreSQL", "Prisma", "Tailwind CSS"],
-    github: "https://github.com",
-    live: "https://example.com",
+      "WebSocket-based chat app with end-to-end encryption, file sharing, and video calling. Supports group chats and message threading.",
+    tech: ["Next.js", "TypeScript", "Python", "FastAPI", "SQLite", "Google ADK", "Tailwind CSS", "Gemini API", "Azure Blob Storage"],
+    github: "https://github.com/aathmakuri034/adk-notes-capture-dupe",
+    live: "https://github.com/aathmakuri034/adk-notes-capture-dupe",
     featured: true,
   },
   {
-    title: "E-Commerce Platform",
+    title: "Mantr",
     description:
-      "A modern e-commerce platform with Stripe integration, inventory management, and a headless CMS for product content. Features server-side rendering for SEO.",
-    tech: ["React", "Node.js", "Stripe", "MongoDB", "Redis", "Docker"],
-    github: "https://github.com",
-    live: "https://example.com",
+      "AI-powered Sanskrit learning app with a Next.js landing page and MongoDB-backed waitlist system",
+    tech: ["React", "Next.js", "Typescript", "MongoDB", "Tailwind CSS", "ESLint"],
+    github: "https://github.com/aathmakuri034/Mantr",
+    live: "https://mantr-seven.vercel.app/",
     featured: true,
   },
   {

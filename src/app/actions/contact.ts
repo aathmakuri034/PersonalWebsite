@@ -1,14 +1,8 @@
 "use server";
 
 import { Resend } from "resend";
-import { z } from "zod";
 import { headers } from "next/headers";
-
-export const contactSchema = z.object({
-  name: z.string().min(1, "Name is required").max(100),
-  email: z.string().email("Invalid email address"),
-  message: z.string().min(1, "Message is required").max(1000, "Message too long"),
-});
+import { contactSchema } from "@/lib/schemas";
 
 // In-memory rate limiter: IP -> list of timestamps
 const rateLimitMap = new Map<string, number[]>();

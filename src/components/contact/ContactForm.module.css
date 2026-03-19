@@ -56,3 +56,9 @@
   composes: input;
   resize: none;
 }
+
+.error {
+  color: var(--color-pop-500, #ef4444);
+  font-size: 0.875rem;
+  font-weight: 500;
+}

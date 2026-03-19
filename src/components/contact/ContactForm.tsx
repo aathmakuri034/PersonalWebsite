@@ -3,15 +3,44 @@
 import { useState, FormEvent } from "react";
 import Button from "@/components/ui/Button";
 import AnimatedContainer from "@/components/ui/AnimatedContainer";
+import { submitContactForm, contactSchema } from "@/app/actions/contact";
 import styles from "./ContactForm.module.css";
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [pending, setPending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    // Placeholder handler — hook up Formspree/Resend later
-    setSubmitted(true);
+    setError(null);
+
+    const formData = new FormData(e.currentTarget);
+    const raw = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      message: formData.get("message"),
+    };
+
+    const parsed = contactSchema.safeParse(raw);
+    if (!parsed.success) {
+      setError(parsed.error.issues[0]?.message ?? "Invalid input");
+      return;
+    }
+
+    setPending(true);
+    try {
+      const result = await submitContactForm(formData);
+      if (result.success) {
+        setSubmitted(true);
+      } else {
+        setError(result.error);
+      }
+    } catch {
+      setError("Something went wrong. Please try again.");
+    } finally {
+      setPending(false);
+    }
   }
 
   if (submitted) {
@@ -30,6 +59,7 @@ export default function ContactForm() {
   return (
     <AnimatedContainer>
       <form onSubmit={handleSubmit} className={styles.form}>
+        {error && <p className={styles.error}>{error}</p>}
         <div>
           <label htmlFor="name" className={styles.label}>Name</label>
           <input
@@ -63,7 +93,9 @@ export default function ContactForm() {
             placeholder="What's on your mind?"
           />
         </div>
-        <Button type="submit">Send Message</Button>
+        <Button type="submit" disabled={pending}>
+          {pending ? "Sending..." : "Send Message"}
+        </Button>
       </form>
     </AnimatedContainer>
   );

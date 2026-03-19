@@ -12,6 +12,7 @@ interface ButtonProps {
   onClick?: () => void;
   type?: "button" | "submit";
   external?: boolean;
+  disabled?: boolean;
 }
 
 export default function Button({
@@ -22,6 +23,7 @@ export default function Button({
   onClick,
   type = "button",
   external = false,
+  disabled = false,
 }: ButtonProps) {
   const variantClass = styles[variant];
   const classes = `${variantClass} ${className}`;
@@ -57,6 +59,7 @@ export default function Button({
       type={type}
       onClick={onClick}
       className={classes}
+      disabled={disabled}
       {...motionProps}
     >
       {children}
